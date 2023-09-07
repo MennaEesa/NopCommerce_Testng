@@ -15,6 +15,7 @@ public class P07_FilterColor {
     private By apparelCat = By.xpath("//a[@href=\"/apparel\"]");
     private By shoesCat =By.xpath("//a[@href=\"/shoes\"]");
     private By selectRed = By.id("attribute-option-15");
+    private final By productName= By.xpath("//a[@href=\"/adidas-consortium-campus-80s-running-shoes\"]");
 
     public P07_FilterColor hoverApparelCat() {
         Actions action = new Actions(driver);
@@ -35,4 +36,8 @@ public class P07_FilterColor {
     }
 
 
+    public boolean checkProductName()
+    {
+        return driver.findElement(productName).isDisplayed();
+    }
 }

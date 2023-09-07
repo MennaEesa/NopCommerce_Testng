@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Nop-Commerce">
+    <parameter name="browser" value=""/>
+    <test  name="Check Registration with Valid Data">
+        <classes>
+            <class name="testcases.TC01_Registration">
+                <methods>
+                    <include name="registerNewUserWithValidData_P"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--        <test name="Check login user with valid data">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC02_Login">-->
+<!--                    <methods>-->
+<!--                        <include name="loginUser_p"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--        <test name="reset user password">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC03_ForgetPassword">-->
+<!--                    <methods>-->
+<!--                         <include name="recoverPassword"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--        <test name="Search for item">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC04_Search">-->
+<!--                    <methods>-->
+<!--                        <include name="search"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+
+<!--        <test name="Switch To Euro">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC05_Currency">-->
+<!--                    <methods>-->
+<!--                        <include name="switchToEuro"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+
+<!--        <test name="Hover Category">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC06_Categories">-->
+<!--                    <methods>-->
+<!--                        <include name="hoverMainAndSubCategory"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+
+<!--        <test name="Filter item by color">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC07_FilterColor">-->
+<!--                    <methods>-->
+<!--                        <include name="filterRedColor"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+
+<!--        <test name="Select from Tags">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC08_Tags">-->
+<!--                    <methods>-->
+<!--                        <include name="selectTags"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+
+<!--        <test name="Add To Shopping cart ">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC09_ShoppingCart">-->
+<!--                    <methods>-->
+<!--                        <include name="addToCart"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+
+<!--        <test name="Add To Wishlist ">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC10_Wishlist">-->
+<!--                    <methods>-->
+<!--                        <include name="addToWishlist"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+
+<!--        <test name="Add To Compare List ">-->
+<!--            <classes>-->
+<!--                <class name="testcases.TC11_CompareList">-->
+<!--                    <methods>-->
+<!--                        <include name="addToCompareList"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
+<!--    <test name="Create successful order">-->
+<!--        <classes>-->
+<!--            <class name="testcases.TC12_CreateOrder">-->
+<!--                <methods>-->
+<!--                    <include name="createNewOrder"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>

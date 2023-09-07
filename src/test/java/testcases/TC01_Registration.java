@@ -1,13 +1,13 @@
 package testcases;
 
-import com.github.javafaker.Faker;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.P02_RegisterPage;
 
 
 public class TC01_Registration extends TestBase {
-//    public static Faker faker=new Faker();
-    public final static String Email =faker.internet().emailAddress();
+
+    public static String Email =faker.internet().emailAddress();
     public static String firstName = faker.name().firstName();
     public static String lastName = faker.name().lastName();
     public static String password = "Menna@123";
@@ -15,9 +15,23 @@ public class TC01_Registration extends TestBase {
 
 
     @Test
-    public void registerNewUserWithValidData_P(){
-        new P02_RegisterPage(driver).openrRegister().selectGender().enterfName(firstName).enterlName(lastName).selectDay().selectMonth().selectYear().enterEmail(Email).enterPassword(password).enterConPassword(password).clickRegisterBTN();
+    public void registerNewUserWithValidData_P() throws InterruptedException {
+        new P02_RegisterPage(driver).openrRegister().selectGender()
+                .enterfName(firstName).enterlName(lastName).selectDay().selectMonth()
+                .selectYear().enterEmail(Email).enterPassword(password).enterConPassword(password)
+                .clickRegisterBTN();
+        // Assert Result
+        Assert.assertTrue(new P02_RegisterPage(driver).confirmMsg());
+    }
 
+    @Test
+    public void registerNewUserWithinValidData_N() throws InterruptedException {
+        new P02_RegisterPage(driver).openrRegister().selectGender()
+                .enterfName(firstName).enterlName(lastName).selectDay().selectMonth()
+                .selectYear().enterEmail(Email).enterPassword(password).enterConPassword(password)
+                .clickRegisterBTN();
+//         Assert Result
+        Assert.assertTrue(new P02_RegisterPage(driver).checkfFailedMessage());
     }
 
 }

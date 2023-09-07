@@ -13,14 +13,21 @@ public class P09_ShoppingCart {
 
 
     private By shoppingCartBTN=By.xpath("//div[@data-productid=\"18\"]/div[2]/div[3]/div[2]/button[@class=\"button-2 product-box-add-to-cart-button\"]");
-    private final By successMSG = By.xpath("//p[@class=\"content\"]");
+    public static final By successMSG = By.xpath("//div[@class=\"bar-notification success\"]");
 
     public P09_ShoppingCart PressShoppingCartBTN() {
         driver.findElement(shoppingCartBTN).click();
-        WebDriverWait wait = new WebDriverWait(driver,5);
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(successMSG));
+        String message = driver.findElement(successMSG).getText();
+        System.out.println(message);
         return this;
     }
+
+    public boolean cartMSG()
+    {
+        return driver.findElement(successMSG).getText().contains("The product has been added to your shopping cart");
+    }
+
+
 
 
 }

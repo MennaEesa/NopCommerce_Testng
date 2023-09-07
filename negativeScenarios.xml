@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Nop-Commerce">
+    <parameter name="browser" value=""/>
+    <test name="check Register with invalid data">
+        <classes>
+            <class name="testcases.TC01_Registration">
+                <methods>
+                    <include name="registerNewUserWithinValidData_N"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="check Login With Invalid Email and Valid password">
+        <classes>
+            <class name="testcases.TC02_Login">
+                <methods>
+                    <include name="loginInvalidEmail_N"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="check Login With valid Email and inValid password">
+        <classes>
+            <class name="testcases.TC02_Login">
+                <methods>
+                    <include name="loginWithValidEmailandInvalidPassworf_N"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="check Login With invalid Email and inValid password">
+        <classes>
+            <class name="testcases.TC02_Login">
+                <methods>
+                    <include name="loginWithInvalidEmailandInvalidPassworf_N"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -33,12 +33,12 @@ public class P03_ForgetPassword {
         return this;
     }
 
-    public P03_ForgetPassword getSuccessMSG()
+    public boolean getSuccessMSG()
     {
         WebDriverWait wait=new WebDriverWait(driver,10);
         String successMSG =  wait.until(ExpectedConditions.visibilityOfElementLocated(succMSG)).getText();
         System.out.println(successMSG);
-        return this;
+        return driver.findElement(succMSG).getText().equals("Email with instructions has been sent to you.");
     }
 
 }

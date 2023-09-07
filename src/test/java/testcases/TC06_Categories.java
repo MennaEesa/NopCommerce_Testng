@@ -1,20 +1,25 @@
 package testcases;
 
 import org.testng.annotations.Test;
-import pages.P06_Categories;
+import org.testng.asserts.SoftAssert;
+import pages.P01_LoginPage;
+import pages.P05_CurrencyPage;
+import pages.P06_CategoriesPage;
+
+import static testcases.TC01_Registration.Email;
+import static testcases.TC01_Registration.password;
 
 public class TC06_Categories extends TestBase{
 
 
     @Test
-    public void hoverMainCategory()
+    public void hoverMainAndSubCategory()
     {
-        new P06_Categories(driver).getMainCategory();
-    }
-
-    @Test
-    public void hoverSubCategory()
-    {
-        new P06_Categories(driver).getMainCategory().getSubCategory();
+        new P01_LoginPage(driver).openLogin().enterEmail(Email).enterPassword(password)
+       .clickLoginBTN();
+        new P06_CategoriesPage(driver).getMainCategory().getSubCategory();
+        SoftAssert soft = new SoftAssert();
+        soft.assertTrue(new P06_CategoriesPage(driver).checkPageTitle());
+        soft.assertAll();
     }
 }
