@@ -16,7 +16,7 @@ public class P13_userInfo {
     private final By number = By.id("BillingNewAddress_PhoneNumber");
     private final By continueBTN_1 = By.xpath("//button[@onclick=\"Billing.save()\"]");
     private final By continueBTN_2 = By.xpath("//button[@onclick=\"ShippingMethod.save()\"]");
-    private final By visaOption = By.xpath("//div[@class=\"section payment-method\"]/ul/li[2]/div//img");
+    private final By visaOption = By.xpath("//div[@class=\"section payment-method\"]/ul/li[2]/div[1]/div[2]/label");
 
 
 
@@ -57,7 +57,7 @@ public class P13_userInfo {
 
     public boolean visaSection()
     {
-        return driver.findElement(visaOption).isDisplayed();
+        return driver.findElement(visaOption).getText().contains("Credit Card");
     }
 
 

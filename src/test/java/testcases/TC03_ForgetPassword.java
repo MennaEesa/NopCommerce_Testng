@@ -6,6 +6,7 @@ import org.testng.asserts.SoftAssert;
 import pages.P01_LoginPage;
 import pages.P02_RegisterPage;
 import pages.P03_ForgetPassword;
+import utility.Utilities;
 
 import static testcases.TC01_Registration.*;
 
@@ -20,6 +21,8 @@ public class TC03_ForgetPassword extends TestBase{
 
         //Todo : forget password
         new P03_ForgetPassword(driver).openForgetPLink().enterRecoverEmail(Email).clickRecoverBTN();
+        // take screenshot
+        Utilities.captureScreenShot(driver,"P_forgetPassworfImage");
        SoftAssert soft = new SoftAssert();
         soft.assertTrue(new P03_ForgetPassword(driver).getSuccessMSG());
         soft.assertAll();

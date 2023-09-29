@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.*;
+import utility.Utilities;
 
 import static pages.P09_ShoppingCart.successMSG;
 import static testcases.TC01_Registration.Email;
@@ -42,15 +43,14 @@ public class TC12_CreateOrder extends TestBase{
         new P13_userInfo(driver).selectCountry(Country).enterCity(City).enterAddress(Address)
          .enterZipCode(ZipCode).enterNumber(PhoneNum).pressContinueBTN_1().pressContinueBTN_2();
         //Todo 5: check is visa option displayed
-       soft = new SoftAssert();
-        soft.assertTrue(new P13_userInfo(driver).visaSection());
+       Assert.assertTrue(new P13_userInfo(driver).visaSection());
         //Todo 6: fill credit card information
         new P14_paymentInfo(driver).selectCreditCard() .pressContinueBTN_3().fillHolderName(holderName)
           .fillCardNumber(cardNum).selectExpireMonth().selectExpireYear().fillCardCode(cardCode)
                .pressContinueBTN_4().pressConfirmBTN();
+        // take screenshot
+        Utilities.captureScreenShot(driver,"createOrderImage");
         //Todo: Check success payment message
-        soft.assertTrue(new P14_paymentInfo(driver).successPaymentMSG());
-//        Assert.assertTrue(new P14_paymentInfo(driver).successPaymentMSG());
-        soft.assertAll();
+        Assert.assertTrue(new P14_paymentInfo(driver).successPaymentMSG());
     }
 }
