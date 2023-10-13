@@ -13,11 +13,11 @@
 
 ## Introduction
 
-Nop Commerce application that provides various shopping services. This repository contains the source code for the XYZ Bank application.
+Nop Commerce application that provides various shopping services. This repository contains the source code for the Nop Commerce application.
 
 ## Features
 
-- *Account Registration*: Create and manage bank accounts.
+- *Account Registration*: Create and manage Nop Commerce accounts.
 - *Online shopping*: Perform online shopping for serval products.
 - *online*: can payment online.
 
